@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROBLOG</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <!-- Logo con imagen -->
+      <div class="logo">
+        <img src="img/logo nav.png" alt="Logo Roblog" class="logo-img">
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn">Categorías</button>
+          <div class="dropdown-content">
+            <a href="#" data-category="deportes">Deportes</a>
+            <a href="#" data-category="terror">Terror</a>
+            <a href="#" data-category="funame">Funame si quieres</a>
+            <a href="#" data-category="frikis">Frikis</a>
+            <a href="#" data-category="tecnologia">Tecnología</a>
+            <a href="#" data-category="comida">Comida</a>
+          </div>
+        </li>
+        <li id="usuario-link"><a href="#">Iniciar sesión</a></li>
+        <li><a href="inicio.html">Crear cuenta</a></li> <!-- Enlace para Crear cuenta -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner principal -->
+  <section id="banner">
+    <h2>Publica lo que quieras sin el miedo de ser funado</h2>
+    <img src="img/images.jpeg" alt="Calamardo Guapo">
+  </section>
+
+  <!-- Botón de publicación -->
+  <section id="boton-publicar">
+    <button onclick="document.getElementById('publicar-form').scrollIntoView({behavior: 'smooth'})">
+      Publicar
+    </button>
+  </section>
+
+  <!-- Formulario de publicación -->
+  <section id="publicar-form" class="formulario">
+    <h3>Crear nueva publicación</h3>
+    <input type="text" id="post-title" placeholder="Título de la noticia">
+    <textarea id="post-content" placeholder="Contenido de la noticia"></textarea>
+    <select id="post-category">
+      <option value="">Selecciona una categoría</option>
+      <option value="deportes">Deportes</option>
+      <option value="terror">Terror</option>
+      <option value="funame">Funame si quieres</option>
+      <option value="frikis">Frikis</option>
+      <option value="tecnologia">Tecnología</option>
+      <option value="comida">Comida</option>
+    </select>
+    <button id="btn-publicar">Publicar noticia</button>
+  </section>
+
+  <!-- Noticias existentes -->
+  <main id="noticias">
+    <!-- Las publicaciones se generan aquí -->
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Simulando el inicio de sesión
+    function iniciarSesion() {
+      // Suponiendo que los datos de usuario se almacenan en el localStorage
+      const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+      const usuario = usuarios[0]; // Suponemos que el primer usuario es el que ha iniciado sesión
+      if (usuario) {
+        document.getElementById('usuario-link').innerHTML = `Hola, ${usuario.nombres}`;
+      }
+    }
+
+    // Llamar a la función de inicio de sesión
+    iniciarSesion();
+  </script>
+  <!-- Noticias existentes -->
+  <main id="noticias">
+    <div class="post">
+      <h4>¡Increíble gol de media cancha!</h4>
+      <p class="categoria">deportes | Autor: invitado</p>
+      <p>Un jugador sorprende al público con un disparo desde media cancha que termina en gol.</p>
+      <div class="comentarios">
+        <h5>Comentarios:</h5>
+        <ul id="comentarios-0"></ul>
+        <input type="text" id="comentario-input-0" placeholder="Agrega un comentario..." />
+        <button onclick="agregarComentario(0)">Comentar</button>
+      </div>
+    </div>
+    <div class="post">
+      <h4>La casa embrujada de la colina</h4>
+      <p class="categoria">terror | Autor: invitado</p>
+      <p>Vecinos aseguran escuchar gritos y ver luces extrañas por las noches.</p>
+      <div class="comentarios">
+        <h5>Comentarios:</h5>
+        <ul id="comentarios-1"></ul>
+        <input type="text" id="comentario-input-1" placeholder="Agrega un comentario..." />
+        <button onclick="agregarComentario(1)">Comentar</button>
+      </div>
+    </div>
+    <div class="post">
+      <h4>Memes que deberían cancelarte</h4>
+      <p class="categoria">funame | Autor: invitado</p>
+      <p>Un repaso de los memes más controversiales que aún circulan.</p>
+      <div class="comentarios">
+        <h5>Comentarios:</h5>
+        <ul id="comentarios-2"></ul>
+        <input type="text" id="comentario-input-2" placeholder="Agrega un comentario..." />
+        <button onclick="agregarComentario(2)">Comentar</button>
+      </div>
+    </div>
+    <div class="post">
+      <h4>10 razones por las que amamos Star Wars</h4>
+      <p class="categoria">frikis | Autor: invitado</p>
+      <p>Exploramos la saga galáctica y su impacto en la cultura geek.</p>
+      <div class="comentarios">
+        <h5>Comentarios:</h5>
+        <ul id="comentarios-3"></ul>
+        <input type="text" id="comentario-input-3" placeholder="Agrega un comentario..." />
+        <button onclick="agregarComentario(3)">Comentar</button>
+      </div>
+    </div>
+    <div class="post">
+      <h4>¿El fin de los smartphones?</h4>
+      <p class="categoria">tecnologia | Autor: invitado</p>
+      <p>La nueva generación de dispositivos podría cambiarlo todo.</p>
+      <div class="comentarios">
+        <h5>Comentarios:</h5>
+        <ul id="comentarios-4"></ul>
+        <input type="text" id="comentario-input-4" placeholder="Agrega un comentario..." />
+        <button onclick="agregarComentario(4)">Comentar</button>
+      </div>
+    </div>
+    <div class="post">
+      <h4>5 recetas con queso que te harán babear</h4>
+      <p class="categoria">comida | Autor: invitado</p>
+      <p>Desde mac & cheese hasta arepas, todo es mejor con queso.</p>
+      <div class="comentarios">
+        <h5>Comentarios:</h5>
+        <ul id="comentarios-5"></ul>
+        <input type="text" id="comentario-input-5" placeholder="Agrega un comentario..." />
+        <button onclick="agregarComentario(5)">Comentar</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
