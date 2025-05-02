@@ -1,0 +1,80 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/img/ChatGPT\ Image\ 1\ abr\ 2025\,\ 10_34_00\ p.m..png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Contenedor del formulario */
+  .formulario {
+    background-color: rgba(255, 255, 255, 0.6); /* Blanco con 85% de opacidad */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Título */
+  .formulario h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #222;
+  }
+  
+  /* Inputs del formulario */
+  .formulario input[type="text"],
+  .formulario input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Botones */
+  .formulario button {
+    background-color: #00aaff; /* Celeste */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formulario button:hover {
+    background-color: #008fcc;
+  }
+  
+  /* Párrafo de registro */
+  .formulario p {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .formulario p button {
+    background-color: transparent;
+    color: #00aaff;
+    border: none;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .formulario p button:hover {
+    color: #008fcc;
+  }
+  
