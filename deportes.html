@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deportes - Roblog</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="img/logo nav.png" alt="Logo Roblog" class="logo-img">
+      </div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn">Categorías</button>
+          <div class="dropdown-content">
+            <a href="deportes.html">Deportes</a>
+            <a href="terror.html">Terror</a>
+            <a href="funame.html">Funame si quieres</a>
+            <a href="frikis.html">Frikis</a>
+            <a href="tecnologia.html">Tecnología</a>
+            <a href="comida.html">Comida</a>
+          </div>
+        </li>
+        <li><a href="inicio.html">Iniciar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="banner">
+    <h2>Publica lo que quieras en Deportes</h2>
+    <img src="img/images.jpeg" alt="Imagen de deportes">
+  </section>
+
+  <section id="boton-publicar">
+    <button onclick="document.getElementById('publicar-form').scrollIntoView({behavior: 'smooth'})">
+      Publicar
+    </button>
+  </section>
+
+  <section id="publicar-form" class="formulario">
+    <h3>Crear nueva publicación</h3>
+    <input type="text" id="post-title" placeholder="Título de la noticia">
+    <textarea id="post-content" placeholder="Contenido de la noticia"></textarea>
+    <select id="post-category">
+      <option value="deportes" selected>Deportes</option>
+      <option value="terror">Terror</option>
+      <option value="funame">Funame si quieres</option>
+      <option value="frikis">Frikis</option>
+      <option value="tecnologia">Tecnología</option>
+      <option value="comida">Comida</option>
+    </select>
+    <button id="btn-publicar">Publicar noticia</button>
+  </section>
+
+  <main id="noticias">
+    <!-- Las publicaciones de deportes se generan aquí -->
+  </main>
+
+  <script src="js/categorias.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
